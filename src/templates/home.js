@@ -15,28 +15,11 @@ const IndexPage = ({ data }) => (
       sectionContent={data.home.sections[0]}
     />
     <Section
-        background={data.home.background}
-        decorationPicture={data.home.decorationPicture}
-        underline={data.home.underline}
-        // sectionContent={data.home.sections[0]}
+      background={data.home.background}
+      decorationPicture={data.home.decorationPicture}
+      underline={data.home.underline}
+      sectionContent={data.home.sections[1]}
     />
-    {/*{data.allDatoCmsWork.edges.map(({ node: work }) => (*/}
-    {/*  <div key={work.id} className="showcase__item">*/}
-    {/*    <figure className="card">*/}
-    {/*      <Link to={`/works/${work.slug}`} className="card__image">*/}
-    {/*        <Img fluid={work.coverImage.fluid} />*/}
-    {/*      </Link>*/}
-    {/*      <figcaption className="card__caption">*/}
-    {/*        <h6 className="card__title">*/}
-    {/*          <Link to={`/works/${work.slug}`}>{work.title}</Link>*/}
-    {/*        </h6>*/}
-    {/*        <div className="card__description">*/}
-    {/*          <p>{work.excerpt}</p>*/}
-    {/*        </div>*/}
-    {/*      </figcaption>*/}
-    {/*    </figure>*/}
-    {/*  </div>*/}
-    {/*))}*/}
   </Layout>
 );
 
@@ -62,7 +45,15 @@ IndexPage.propTypes = {
         PropTypes.shape({
           title: PropTypes.string,
           subheadline: PropTypes.string,
-          paragraph: PropTypes.string
+          paragraph: PropTypes.string,
+          paragraphWithLists: PropTypes.arrayOf(
+            PropTypes.shape({
+              listItems: PropTypes.arrayOf(
+                PropTypes.shape({ item: PropTypes.string })
+              )
+            })
+          ),
+          paragraphBottom: PropTypes.string
         })
       )
     }
@@ -89,6 +80,12 @@ export const query = graphql`
         title
         subheadline
         paragraph
+        paragraphWithLists {
+          listItems {
+            item
+          }
+        }
+        paragraphBottom
       }
     }
   }

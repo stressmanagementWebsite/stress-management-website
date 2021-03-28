@@ -1,11 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-has-content, jsx-a11y/anchor-is-valid*/
 
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "gatsby";
-import { StaticQuery, graphql } from "gatsby";
-import { HelmetDatoCms } from "gatsby-source-datocms";
-
 import "../styles/index.sass";
 
 const Section = props => {
@@ -36,9 +32,50 @@ const Section = props => {
         )}
         {props.sectionContent?.paragraph && (
           <div
-            className="section-paragraph"
+            className="section-paragraph section-paragraph-main"
             dangerouslySetInnerHTML={{ __html: props.sectionContent.paragraph }}
-          ></div>
+          />
+        )}
+        {props.sectionContent?.paragraphWithLists && (
+          <div className="section-paragraph section-paragraph-with-lists">
+            {props.sectionContent?.paragraphWithLists.map(
+              (paragraph, index) => {
+                return (
+                  <div
+                    className={`list-container ${`list-container-${index}`}`}
+                  >
+                    {paragraph?.listItems?.map(listItem => (
+                      <div className="list-item-container">
+                        <div
+                          className={`list-item ${
+                            index === 0 || index === 1
+                              ? "list-item-negative"
+                              : "list-item-positive"
+                          }`}
+                          dangerouslySetInnerHTML={{ __html: listItem?.item }}
+                        />
+                        <div
+                          className={`list-item-icon ${
+                            index === 0 || index === 1
+                              ? "list-item-icon-cross"
+                              : "list-item-icon-tick"
+                          }`}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                );
+              }
+            )}
+          </div>
+        )}
+        {props.sectionContent?.paragraphBottom && (
+          <div
+            className="section-paragraph section-paragraph-bottom"
+            dangerouslySetInnerHTML={{
+              __html: props.sectionContent.paragraphBottom
+            }}
+          />
         )}
         {props.decorationPicture?.url && (
           <img
@@ -68,7 +105,15 @@ Section.propTypes = {
   sectionContent: {
     title: PropTypes.string,
     subheadline: PropTypes.string,
-    paragraph: PropTypes.string
+    paragraph: PropTypes.string,
+    paragraphWithLists: PropTypes.arrayOf(
+      PropTypes.shape({
+        listItems: PropTypes.arrayOf(
+          PropTypes.shape({ item: PropTypes.string })
+        )
+      })
+    ),
+    paragraphBottom: PropTypes.string
   }
 };
 

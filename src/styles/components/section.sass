@@ -9,12 +9,12 @@
   align-items: center
 
 .section-headline-container
-  font-size: 42px
+  font-size: $headline-font-size
   text-align: center
 
 .section-headline-underline
-  width: 720px
-  height: 18px
+  width: 630px
+  height: 16px
   object-fit: cover
 
 .paper
@@ -37,14 +37,72 @@
   bottom: -160px
 
 .section-subheadline
-  font-size: 40px
+  font-size: $subheadline-font-size
 
 .section-paragraph
-  font-size: 22px
+  font-size: $paragraph-font-size
+  align-self: flex-start
+
+.section-paragraph-with-lists
+  display: flex
+  width: 100%
+  justify-content: space-between
+  margin-bottom: 15px
+
+.list-container-0
+  width: 15%
+
+.list-container-1
+  width: 27%
+
+.list-container-2
+  width: 55%
+
+.list-container-negative
+  width: 38%
+
+.list-container-positive
+  width: 62%
+
+.list-item
+  // display: inline-block
+
+.list-item-positive
+  color: green
+
+.list-item-negative
+  color: red
+
+.list-item-icon
+  width: 15px
+  height: 15px
+  // display: inline-block
+  background-size: 100% 100%
+  margin-left: 10px
+  display: none
+
+.green-text
+  color: green
+  font-weight: bold
+
+.red-text
+  color: red
+  font-weight: bold
+
+.list-item-icon-cross
+  background-image: url("https://www.datocms-assets.com/45348/1616935874-cross-in-box-1.png")
+
+.list-item-icon-tick
+  background-image: url("https://www.datocms-assets.com/45348/1616936119-checkbox-composite-1174910.png")
+
+.section-paragraph-main
   padding-top: 10px
 
   & > p
     padding-bottom: 15px
+
+.section-paragraph-bottom
+  width: 75%
 
 @media screen and (max-width: $mediumBreakpoint)
   .paper
@@ -52,7 +110,7 @@
     padding: 20px 30px
 
   .section-headline-container
-    font-size: 34px
+    font-size: $headline-font-size-tablet
 
   .section-headline-underline
     width: 500px
@@ -60,8 +118,22 @@
     margin-top: 5px
 
   .section-subheadline
-    font-size: 32px
+    font-size: $subheadline-font-size-tablet
 
+  .list-container-0
+    width: 19%
+
+  .list-container-2
+    width: 50%
+
+  .business-cards
+    height: 400px
+    width: 490px
+    right: -120px
+    bottom: -107px
+
+  .section-paragraph-bottom
+    width: 60%
 
 @media screen and (max-width: $extraSmallBreakpoint)
   .paper
@@ -70,17 +142,17 @@
     padding: 20px 15px
 
   .section-headline-container
-    font-size: 18px
+    font-size: $headline-font-size-mobile
 
   .section-headline-underline
     width: 300px
     height: 16px
 
   .section-subheadline
-    font-size: 18px
+    font-size: $subheadline-font-size-mobile
 
   .section-paragraph
-    font-size: 14px
+    font-size: $paragraph-font-size-mobile
 
   .business-cards
     height: 200px
@@ -94,8 +166,11 @@
     display: none
 
   .section-headline-container
-    font-size: 14px
+    font-size: $headline-font-size-mobile-smallest
 
   .section-paragraph
     & > p
       padding-bottom: 5px
+
+  .section-paragraph-bottom
+    width: 100%
