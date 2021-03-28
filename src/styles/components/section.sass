@@ -9,12 +9,12 @@
   align-items: center
 
 .section-headline-container
-  font-size: $headline-font-size
+  font-size: $headline-font-size-desktop
   text-align: center
 
 .section-headline-underline
-  width: 630px
-  height: 16px
+  width: 830px
+  height: 18px
   object-fit: cover
 
 .paper
@@ -26,21 +26,22 @@
   display: flex
   align-items: center
   flex-direction: column
-  padding: 40px 80px
+  padding: 80px 120px
 
 .business-cards
-  height: 540px
-  width: 618px
+  height: 740px
+  width: 818px
   position: absolute
+  -o-object-fit: contain
   object-fit: contain
-  right: -150px
-  bottom: -160px
+  right: -200px
+  bottom: -195px
 
 .section-subheadline
-  font-size: $subheadline-font-size
+  font-size: $subheadline-font-size-desktop
 
 .section-paragraph
-  font-size: $paragraph-font-size
+  font-size: $paragraph-font-size-desktop
   align-self: flex-start
 
 .section-paragraph-with-lists
@@ -48,6 +49,9 @@
   width: 100%
   justify-content: space-between
   margin-bottom: 15px
+
+.section-paragraph-with-lists-mobile
+  display: none
 
 .list-container-0
   width: 15%
@@ -65,7 +69,10 @@
   width: 62%
 
 .list-item
-  // display: inline-block
+
+  & > p > img
+    width: 20px
+    height: 20px
 
 .list-item-positive
   color: green
@@ -96,13 +103,83 @@
   background-image: url("https://www.datocms-assets.com/45348/1616936119-checkbox-composite-1174910.png")
 
 .section-paragraph-main
-  padding-top: 10px
+  padding-top: 15px
+
+  & > p > span > img
+    width: 22px
+    height: 22px
+
+  & > p > img
+    width: 22px
+    height: 22px
 
   & > p
-    padding-bottom: 15px
+    padding-bottom: 20px
 
 .section-paragraph-bottom
   width: 75%
+
+  & > p > img
+    width: 22px
+    height: 22px
+
+  & > p > span > img
+    width: 22px
+    height: 22px
+
+@media screen and (max-width: $extraLargeBreakpoint)
+  .business-cards
+    height: 540px
+    width: 618px
+    right: -150px
+    bottom: -160px
+
+  .section-headline-container
+    font-size: $headline-font-size
+
+  .section-subheadline
+    font-size: $subheadline-font-size
+
+  .section-headline-underline
+    width: 630px
+    height: 16px
+
+  .section-paragraph
+    font-size: $paragraph-font-size
+
+  .section-paragraph-main
+    padding-top: 10px
+
+    & > p > img
+      width: 14px
+      height: 14px
+
+    & > p > span > img
+      width: 14px
+      height: 14px
+
+    & > p
+      padding-bottom: 15px
+
+  .paper
+    padding: 40px 80px
+
+  .list-item
+
+    & > p > img
+      width: 14px
+      height: 14px
+
+  .section-paragraph-bottom
+    width: 75%
+
+    & > p > img
+      width: 14px
+      height: 14px
+
+    & > p > span > img
+      width: 14px
+      height: 14px
 
 @media screen and (max-width: $mediumBreakpoint)
   .paper
@@ -136,6 +213,9 @@
     width: 60%
 
 @media screen and (max-width: $extraSmallBreakpoint)
+  .section-wrapper-1 .business-cards
+    display: none
+
   .paper
     min-height: 90%
     max-height: 95%
@@ -154,6 +234,43 @@
   .section-paragraph
     font-size: $paragraph-font-size-mobile
 
+  .section-paragraph-main
+    & > p > img
+      width: 12px
+      height: 12px
+
+    & > p > span > img
+      width: 12px
+      height: 12px
+
+  .section-paragraph-with-lists-mobile
+    display: flex
+
+  .section-paragraph-with-lists-desktop
+    display: none
+
+  .list-item
+    & > p > img
+      width: 12px
+      height: 12px
+
+  .section-paragraph-bottom
+    width: 100%
+
+    & > p > img
+      width: 12px
+      height: 12px
+
+    & > p > span > img
+      width: 12px
+      height: 12px
+
+  .list-container-0
+    width: 50%
+
+  .list-container-2
+    width: 56%
+
   .business-cards
     height: 200px
     width: 280px
@@ -162,6 +279,9 @@
 
 
 @media screen and (max-width: $smallestBreakpoint)
+  .section-wrapper.section-wrapper-1
+    height: 130vh
+
   .business-cards
     display: none
 

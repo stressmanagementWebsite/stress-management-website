@@ -7,7 +7,7 @@ import "../styles/index.sass";
 const Section = props => {
   return (
     <div
-      className="section-wrapper"
+      className={`section-wrapper section-wrapper-${props.index}`}
       style={{
         backgroundImage: `${
           props.background.url ? `url(${props.background.url})` : "none"
@@ -37,14 +37,43 @@ const Section = props => {
           />
         )}
         {props.sectionContent?.paragraphWithLists && (
-          <div className="section-paragraph section-paragraph-with-lists">
-            {props.sectionContent?.paragraphWithLists.map(
-              (paragraph, index) => {
+          <div className="section-paragraph section-paragraph-with-lists section-paragraph-with-lists-desktop">
+            {props.sectionContent?.paragraphWithLists.map((list, index) => {
+              return (
+                <div className={`list-container ${`list-container-${index}`}`}>
+                  {list?.listItems?.map(listItem => (
+                    <div className="list-item-container">
+                      <div
+                        className={`list-item ${
+                          index === 0 || index === 1
+                            ? "list-item-negative"
+                            : "list-item-positive"
+                        }`}
+                        dangerouslySetInnerHTML={{ __html: listItem?.item }}
+                      />
+                      <div
+                        className={`list-item-icon ${
+                          index === 0 || index === 1
+                            ? "list-item-icon-cross"
+                            : "list-item-icon-tick"
+                        }`}
+                      />
+                    </div>
+                  ))}
+                </div>
+              );
+            })}
+          </div>
+        )}
+        {props.sectionContent?.paragraphWithLists && (
+          <div className="section-paragraph section-paragraph-with-lists section-paragraph-with-lists-mobile">
+            {props.sectionContent?.paragraphWithLists.map((list, index) => {
+              if (index === 2) {
                 return (
                   <div
                     className={`list-container ${`list-container-${index}`}`}
                   >
-                    {paragraph?.listItems?.map(listItem => (
+                    {list?.listItems?.map(listItem => (
                       <div className="list-item-container">
                         <div
                           className={`list-item ${
@@ -65,8 +94,55 @@ const Section = props => {
                     ))}
                   </div>
                 );
+              } else if (index === 0) {
+                return (
+                  <div
+                    className={`list-container ${`list-container-${index}`}`}
+                  >
+                    {list?.listItems?.map(listItem => (
+                      <div className="list-item-container">
+                        <div
+                          className={`list-item ${
+                            index === 0 || index === 1
+                              ? "list-item-negative"
+                              : "list-item-positive"
+                          }`}
+                          dangerouslySetInnerHTML={{ __html: listItem?.item }}
+                        />
+                        <div
+                          className={`list-item-icon ${
+                            index === 0 || index === 1
+                              ? "list-item-icon-cross"
+                              : "list-item-icon-tick"
+                          }`}
+                        />
+                      </div>
+                    ))}
+                    {props.sectionContent?.paragraphWithLists[1]?.listItems?.map(
+                      listItem => (
+                        <div className="list-item-container">
+                          <div
+                            className={`list-item ${
+                              index === 0 || index === 1
+                                ? "list-item-negative"
+                                : "list-item-positive"
+                            }`}
+                            dangerouslySetInnerHTML={{ __html: listItem?.item }}
+                          />
+                          <div
+                            className={`list-item-icon ${
+                              index === 0 || index === 1
+                                ? "list-item-icon-cross"
+                                : "list-item-icon-tick"
+                            }`}
+                          />
+                        </div>
+                      )
+                    )}
+                  </div>
+                );
               }
-            )}
+            })}
           </div>
         )}
         {props.sectionContent?.paragraphBottom && (

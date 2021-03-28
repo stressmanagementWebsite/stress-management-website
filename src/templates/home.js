@@ -13,12 +13,14 @@ const IndexPage = ({ data }) => (
       decorationPicture={data.home.decorationPicture}
       underline={data.home.underline}
       sectionContent={data.home.sections[0]}
+      index={0}
     />
     <Section
       background={data.home.background}
       decorationPicture={data.home.decorationPicture}
       underline={data.home.underline}
       sectionContent={data.home.sections[1]}
+      index={1}
     />
   </Layout>
 );
