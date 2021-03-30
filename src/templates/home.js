@@ -9,16 +9,16 @@ import Section from "../components/Section";
 const IndexPage = ({ data }) => (
   <Layout>
     <Section
-      background={data.home.background}
-      decorationPicture={data.home.decorationPicture}
-      underline={data.home.underline}
+      // background={data.home.background}
+      // decorationPicture={data.home.decorationPicture}
+      // underline={data.home.underline}
       sectionContent={data.home.sections[0]}
       index={0}
     />
     <Section
-      background={data.home.background}
+      // background={data.home.background}
       decorationPicture={data.home.decorationPicture}
-      underline={data.home.underline}
+      // underline={data.home.underline}
       sectionContent={data.home.sections[1]}
       index={1}
     />
@@ -48,6 +48,7 @@ IndexPage.propTypes = {
           title: PropTypes.string,
           subheadline: PropTypes.string,
           paragraph: PropTypes.string,
+          additionalTextBlock: PropTypes.string,
           paragraphWithLists: PropTypes.arrayOf(
             PropTypes.shape({
               listItems: PropTypes.arrayOf(
@@ -88,6 +89,7 @@ export const query = graphql`
           }
         }
         paragraphBottom
+        additionalTextBlock
       }
     }
   }

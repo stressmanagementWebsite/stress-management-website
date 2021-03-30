@@ -1,0 +1,232 @@
+.header
+  display: flex
+  z-index: 100
+  position: fixed
+  width: 100%
+  top: 0
+  cursor: auto !important
+  color: $black
+
+  &-logo
+    width: 200px
+    height: 70px
+    background-size: 100% 100%
+    background-position-y: -8px
+    background-repeat: no-repeat
+    margin-top: 8px
+
+  &-stage
+    min-height: 100px
+    background: $white
+    transition: min-height 1s linear, line-height 1s linear, box-shadow 1s linear
+    line-height: 100px
+    color: $black
+    box-shadow: $standard-box-shadow
+
+    .navItem
+      a::after
+        background-color: $bright-green
+
+  &-technologies
+    min-height: 50px
+    background: $partly-transparent-header
+    transition: min-height 1s linear, line-height 1s linear, box-shadow 1s linear
+    line-height: 50px
+    color: $black
+    box-shadow: $reset-box-shadow
+
+    .navItem
+      a::after
+        background-color: $bright-blue
+
+  &-projects
+    min-height: 50px
+    // background: $black
+    // color: #ffffff !important
+    // transition: min-height 1s linear, line-height 1s linear, box-shadow 1s linear
+    line-height: 50px
+    box-shadow: $reset-box-shadow
+
+    .navItem
+      a::after
+        background-color: $bright-purple
+
+  &-experience
+    min-height: 50px
+    // background: $black
+    // color: #ffffff !important
+    // transition: min-height 1s linear, line-height 1s linear, box-shadow 1s linear
+    line-height: 50px
+    box-shadow: $reset-box-shadow
+
+    .navItem
+      a::after
+        background-color: $accent-color
+
+  &-contacts
+    min-height: 50px
+    // background: $black
+    // color: #ffffff !important
+    // transition: min-height 1s linear, line-height 1s linear, box-shadow 1s linear
+    line-height: 50px
+    box-shadow: $reset-box-shadow
+
+    .navItem
+      a::after
+        background-color: yellow
+
+.navItems_container
+  display: flex
+  padding: 0 20px
+  width: 100%
+  justify-content: space-between
+
+.navItem
+  font-family: $main-font
+  font-weight: 700
+
+  &-projects
+    font-weight: 300
+
+  a
+    position: relative
+
+  a::after
+    content: ''
+    // background-color: $accent-color
+    transition: width 0.8s
+    -webkit-transition: width 0.8s
+    -moz-transition: width 0.8s
+    -o-transition: width 0.8s
+    width: 0
+    height: 6px
+    position: absolute
+    top: 12px
+    z-index: -1
+    left: -5px
+
+.navItem:hover a::after
+  width: calc(100% + 10px)
+
+
+@media screen and (max-width: $smallBreakpoint)
+  .header
+    min-height: 70px
+    background: $white
+
+    &-logo.closed
+      display: block
+
+    &-logo.open
+      display: none
+
+    @keyframes appearingAnimation
+      0%
+        display: none
+      100%
+        display: block
+
+    @keyframes disappearingAnimation
+      0%
+        display: block
+      100%
+        display: none
+
+    &-logo.closed
+      display: block
+
+    &-stage
+      line-height: 60px
+
+    &-technologies
+
+      .burger
+      top: 25px
+      left: 25px
+
+    .burger
+      position: absolute
+      top: 28px
+      right: 35px
+      cursor: pointer
+
+    .burger:hover
+      cursor: pointer
+
+    .burger_line
+      height: 2px
+      width: 25px
+      background-color: $black
+      margin-top: 5px
+
+    .navItems_container
+      display: flex
+      padding: 0
+      max-height: 0
+      overflow: hidden
+      flex-direction: column
+      transition: max-height 1s ease-out
+      box-shadow: $dark-box-shadow
+
+    .navItems_container.closed
+      max-height: 0
+      overflow: hidden
+      transition: max-height 1s ease-out
+
+    .navItems_container.open
+      transition: max-height 1s ease-out
+      max-height: 360px
+
+    .burger.open
+      left: calc(100% - 50px)
+      top: 20px
+      display: block
+
+      .burger_line
+        margin-top: 0
+        background-color: $black
+
+      .burger_line:nth-child(2)
+        display: none
+
+      .burger_line:nth-child(1)
+        transform: rotate(45deg)
+        margin-top: 4px
+
+      .burger_line:nth-child(3)
+        transform: rotate(-45deg)
+        margin-top: -2px
+
+    .navItem
+      background-color: $white
+      padding-left: 40px
+      color: $black
+
+      a
+        line-height: 60px
+        color: $black
+
+      //a:hover, a:active
+      //  color: $dark-grey
+
+      a::after
+        content: ''
+        border-top: 2px solid $black
+        border-right: 2px solid $black
+        background-color: transparent
+        transform: rotate(45deg)
+        width: 8px
+        height: 8px
+        position: absolute
+        top: 5px
+        left: 110%
+        z-index: 1
+
+    .navItem:hover a
+      color: $light-body-color
+
+    .navItem:hover a::after
+      transform: rotate(45deg)
+      width: 8px
+      height: 8px
+      border-color: $light-body-color

@@ -7,6 +7,7 @@ import { StaticQuery, graphql } from "gatsby";
 import { HelmetDatoCms } from "gatsby-source-datocms";
 
 import "../styles/index.sass";
+import Header from "./Header";
 
 const TemplateWrapper = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -36,6 +37,7 @@ const TemplateWrapper = ({ children }) => {
             seo={data.datoCmsHome.seoMetaTags}
           />
           <div className="container__body">
+            <Header />
             {children}
           </div>
         </div>

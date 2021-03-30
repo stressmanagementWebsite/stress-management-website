@@ -6,17 +6,18 @@ import "../styles/index.sass";
 
 const Section = props => {
   return (
+      <a id={`session${props.index+1}`}>
     <div
       className={`section-wrapper section-wrapper-${props.index}`}
       style={{
         backgroundImage: `${
-          props.background.url ? `url(${props.background.url})` : "none"
+          props.background?.url ? `url(${props.background?.url})` : "none"
         }`
       }}
     >
       <div className="paper paper-large">
         <p className="section-headline-container">
-          {props.sectionContent?.title && <h1>{props.sectionContent.title}</h1>}
+          {props.sectionContent?.title && <h1 className="section-headline">{props.sectionContent.title}</h1>}
         </p>
         {props.underline?.url && (
           <img
@@ -153,6 +154,14 @@ const Section = props => {
             }}
           />
         )}
+        {props.sectionContent?.additionalTextBlock && (
+            <div
+                className="section-paragraph section-additional-text-block"
+                dangerouslySetInnerHTML={{
+                  __html: props.sectionContent.additionalTextBlock
+                }}
+            />
+        )}
         {props.decorationPicture?.url && (
           <img
             className="business-cards"
@@ -162,6 +171,7 @@ const Section = props => {
         )}
       </div>
     </div>
+      </a>
   );
 };
 
@@ -182,6 +192,7 @@ Section.propTypes = {
     title: PropTypes.string,
     subheadline: PropTypes.string,
     paragraph: PropTypes.string,
+    additionalTextBlock: PropTypes.string,
     paragraphWithLists: PropTypes.arrayOf(
       PropTypes.shape({
         listItems: PropTypes.arrayOf(
