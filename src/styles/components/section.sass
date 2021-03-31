@@ -17,15 +17,18 @@
 .section-headline
   position: relative
   z-index: 1
+  background-color: $business-card-color
+  color: $white
+  padding: 0 5px
 
-  &::before
-    content: ""
-    background-color: $partly-transparent-gray
-    width: 100%
-    height: 10px
-    position: absolute
-    top: 60%
-    z-index: -1
+  //&::before
+  //  content: ""
+  //  background-color: $partly-transparent-gray
+  //  width: 100%
+  //  height: 10px
+  //  position: absolute
+  //  top: 60%
+  //  z-index: -1
 
 .section-headline-underline
   width: 830px
@@ -104,6 +107,12 @@
   margin-left: 10px
   display: none
 
+.highlighted-green
+  background-color: $partly-transparent-green
+
+.highlighted-red
+  background-color: $partly-transparent-red
+
 .green-text
   color: green
   font-weight: bold
@@ -111,6 +120,10 @@
 .red-text
   color: red
   font-weight: bold
+
+.highlighted
+  background-color: $business-card-color
+  padding: 0 5px
 
 .list-item-icon-cross
   background-image: url("https://www.datocms-assets.com/45348/1616935874-cross-in-box-1.png")
@@ -135,6 +148,12 @@
 .section-paragraph-bottom
   width: 75%
 
+  .section-paragraph-main
+    padding-top: 15px
+
+  & > p
+    padding-bottom: 20px
+
   & > p > img
     width: 22px
     height: 22px
@@ -145,11 +164,13 @@
 
 .section-additional-text-block
   background-color: $business-card-color
-  color: $white
-  padding: 15px
+  color: $black
+  padding: 15px 15px 0 15px
+  margin-bottom: 15px
+  font-size: $reduced-paragraph-font-size
 
   & > p
-    padding-bottom: 20px
+    padding-bottom: 15px
 
   & > p > strong
     font-weight: 900
@@ -239,6 +260,9 @@
   .section-paragraph-bottom
     width: 60%
 
+  .section-additional-text-block
+    font-size: $reduced-paragraph-font-size-tablet
+
 @media screen and (max-width: $extraSmallBreakpoint)
   .section-wrapper.section-wrapper-1
     padding-bottom: 40px
@@ -287,6 +311,9 @@
     & > p > img
       width: 12px
       height: 12px
+
+  .section-additional-text-block
+    font-size: $reduced-paragraph-font-size-mobile
 
   .section-paragraph-bottom
     width: 100%

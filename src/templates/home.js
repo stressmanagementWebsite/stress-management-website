@@ -5,20 +5,17 @@ import Masonry from "react-masonry-component";
 import Img from "gatsby-image";
 import Layout from "../components/layout";
 import Section from "../components/Section";
+import Header from "../components/Header";
 
 const IndexPage = ({ data }) => (
   <Layout>
+      {data?.home?.header && <Header content={data.home.header} /> }
     <Section
-      // background={data.home.background}
-      // decorationPicture={data.home.decorationPicture}
-      // underline={data.home.underline}
       sectionContent={data.home.sections[0]}
       index={0}
     />
     <Section
-      // background={data.home.background}
       decorationPicture={data.home.decorationPicture}
-      // underline={data.home.underline}
       sectionContent={data.home.sections[1]}
       index={1}
     />
@@ -66,6 +63,16 @@ IndexPage.propTypes = {
 export const query = graphql`
   query HomeQuery($slug: String!) {
     home: datoCmsHome(slug: { eq: $slug }) {
+      header {
+        logo {
+          alt
+          url
+        }
+        links {
+          href
+          label
+        }
+      }
       language
       background {
         url

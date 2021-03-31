@@ -15,6 +15,15 @@
     background-position-y: -8px
     background-repeat: no-repeat
     margin-top: 8px
+    position: relative
+
+    &:after
+      content: ""
+      width: 130px
+      height: 62px
+      position: absolute
+      left: 99%
+      background-color: $business-card-color
 
   &-stage
     min-height: 100px
@@ -70,6 +79,16 @@
   .header
     min-height: 70px
     background: $white
+
+    &-logo
+      width: 52%
+      &:after
+        content: ""
+        width: 120%
+        height: 62px
+        position: absolute
+        left: 99%
+        background-color: $business-card-color
 
     &-logo.closed
       display: block

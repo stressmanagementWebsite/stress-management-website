@@ -6,70 +6,42 @@ import "../styles/index.sass";
 
 const Section = props => {
   return (
-      <a id={`session${props.index+1}`}>
-    <div
-      className={`section-wrapper section-wrapper-${props.index}`}
-      style={{
-        backgroundImage: `${
-          props.background?.url ? `url(${props.background?.url})` : "none"
-        }`
-      }}
-    >
-      <div className="paper paper-large">
-        <p className="section-headline-container">
-          {props.sectionContent?.title && <h1 className="section-headline">{props.sectionContent.title}</h1>}
-        </p>
-        {props.underline?.url && (
-          <img
-            className="section-headline-underline"
-            src={props.underline.url}
-            alt={props.underline.alt || ""}
-          />
-        )}
-        {props.sectionContent?.subheadline && (
-          <h4 className="section-subheadline">
-            {props.sectionContent.subheadline}
-          </h4>
-        )}
-        {props.sectionContent?.paragraph && (
-          <div
-            className="section-paragraph section-paragraph-main"
-            dangerouslySetInnerHTML={{ __html: props.sectionContent.paragraph }}
-          />
-        )}
-        {props.sectionContent?.paragraphWithLists && (
-          <div className="section-paragraph section-paragraph-with-lists section-paragraph-with-lists-desktop">
-            {props.sectionContent?.paragraphWithLists.map((list, index) => {
-              return (
-                <div className={`list-container ${`list-container-${index}`}`}>
-                  {list?.listItems?.map(listItem => (
-                    <div className="list-item-container">
-                      <div
-                        className={`list-item ${
-                          index === 0 || index === 1
-                            ? "list-item-negative"
-                            : "list-item-positive"
-                        }`}
-                        dangerouslySetInnerHTML={{ __html: listItem?.item }}
-                      />
-                      <div
-                        className={`list-item-icon ${
-                          index === 0 || index === 1
-                            ? "list-item-icon-cross"
-                            : "list-item-icon-tick"
-                        }`}
-                      />
-                    </div>
-                  ))}
-                </div>
-              );
-            })}
-          </div>
-        )}
-        {props.sectionContent?.paragraphWithLists && (
-          <div className="section-paragraph section-paragraph-with-lists section-paragraph-with-lists-mobile">
-            {props.sectionContent?.paragraphWithLists.map((list, index) => {
-              if (index === 2) {
+    <a id={`session${props.index + 1}`}>
+      <div
+        className={`section-wrapper section-wrapper-${props.index}`}
+        style={{
+          backgroundImage: `${
+            props.background?.url ? `url(${props.background?.url})` : "none"
+          }`
+        }}
+      >
+        <div className="paper paper-large">
+          <p className="section-headline-container">
+            {props.sectionContent?.title && (
+              <h1 className="section-headline">{props.sectionContent.title}</h1>
+            )}
+          </p>
+          {props.underline?.url && (
+            <img
+              className="section-headline-underline"
+              src={props.underline.url}
+              alt={props.underline.alt || ""}
+            />
+          )}
+          {props.sectionContent?.subheadline && (
+            <div className="section-subheadline" dangerouslySetInnerHTML={{ __html: props.sectionContent.subheadline }} />
+          )}
+          {props.sectionContent?.paragraph && (
+            <div
+              className="section-paragraph section-paragraph-main"
+              dangerouslySetInnerHTML={{
+                __html: props.sectionContent.paragraph
+              }}
+            />
+          )}
+          {props.sectionContent?.paragraphWithLists && (
+            <div className="section-paragraph section-paragraph-with-lists section-paragraph-with-lists-desktop">
+              {props.sectionContent?.paragraphWithLists.map((list, index) => {
                 return (
                   <div
                     className={`list-container ${`list-container-${index}`}`}
@@ -95,32 +67,18 @@ const Section = props => {
                     ))}
                   </div>
                 );
-              } else if (index === 0) {
-                return (
-                  <div
-                    className={`list-container ${`list-container-${index}`}`}
-                  >
-                    {list?.listItems?.map(listItem => (
-                      <div className="list-item-container">
-                        <div
-                          className={`list-item ${
-                            index === 0 || index === 1
-                              ? "list-item-negative"
-                              : "list-item-positive"
-                          }`}
-                          dangerouslySetInnerHTML={{ __html: listItem?.item }}
-                        />
-                        <div
-                          className={`list-item-icon ${
-                            index === 0 || index === 1
-                              ? "list-item-icon-cross"
-                              : "list-item-icon-tick"
-                          }`}
-                        />
-                      </div>
-                    ))}
-                    {props.sectionContent?.paragraphWithLists[1]?.listItems?.map(
-                      listItem => (
+              })}
+            </div>
+          )}
+          {props.sectionContent?.paragraphWithLists && (
+            <div className="section-paragraph section-paragraph-with-lists section-paragraph-with-lists-mobile">
+              {props.sectionContent?.paragraphWithLists.map((list, index) => {
+                if (index === 2) {
+                  return (
+                    <div
+                      className={`list-container ${`list-container-${index}`}`}
+                    >
+                      {list?.listItems?.map(listItem => (
                         <div className="list-item-container">
                           <div
                             className={`list-item ${
@@ -138,40 +96,88 @@ const Section = props => {
                             }`}
                           />
                         </div>
-                      )
-                    )}
-                  </div>
-                );
-              }
-            })}
-          </div>
-        )}
-        {props.sectionContent?.paragraphBottom && (
-          <div
-            className="section-paragraph section-paragraph-bottom"
-            dangerouslySetInnerHTML={{
-              __html: props.sectionContent.paragraphBottom
-            }}
-          />
-        )}
-        {props.sectionContent?.additionalTextBlock && (
+                      ))}
+                    </div>
+                  );
+                } else if (index === 0) {
+                  return (
+                    <div
+                      className={`list-container ${`list-container-${index}`}`}
+                    >
+                      {list?.listItems?.map(listItem => (
+                        <div className="list-item-container">
+                          <div
+                            className={`list-item ${
+                              index === 0 || index === 1
+                                ? "list-item-negative"
+                                : "list-item-positive"
+                            }`}
+                            dangerouslySetInnerHTML={{ __html: listItem?.item }}
+                          />
+                          <div
+                            className={`list-item-icon ${
+                              index === 0 || index === 1
+                                ? "list-item-icon-cross"
+                                : "list-item-icon-tick"
+                            }`}
+                          />
+                        </div>
+                      ))}
+                      {props.sectionContent?.paragraphWithLists[1]?.listItems?.map(
+                        listItem => (
+                          <div className="list-item-container">
+                            <div
+                              className={`list-item ${
+                                index === 0 || index === 1
+                                  ? "list-item-negative"
+                                  : "list-item-positive"
+                              }`}
+                              dangerouslySetInnerHTML={{
+                                __html: listItem?.item
+                              }}
+                            />
+                            <div
+                              className={`list-item-icon ${
+                                index === 0 || index === 1
+                                  ? "list-item-icon-cross"
+                                  : "list-item-icon-tick"
+                              }`}
+                            />
+                          </div>
+                        )
+                      )}
+                    </div>
+                  );
+                }
+              })}
+            </div>
+          )}
+          {props.sectionContent?.additionalTextBlock && (
             <div
-                className="section-paragraph section-additional-text-block"
-                dangerouslySetInnerHTML={{
-                  __html: props.sectionContent.additionalTextBlock
-                }}
+              className="section-paragraph section-additional-text-block"
+              dangerouslySetInnerHTML={{
+                __html: props.sectionContent.additionalTextBlock
+              }}
             />
-        )}
-        {props.decorationPicture?.url && (
-          <img
-            className="business-cards"
-            src={props.decorationPicture.url}
-            alt={props.decorationPicture.alt || ""}
-          />
-        )}
+          )}
+          {props.sectionContent?.paragraphBottom && (
+            <div
+              className="section-paragraph section-paragraph-bottom"
+              dangerouslySetInnerHTML={{
+                __html: props.sectionContent.paragraphBottom
+              }}
+            />
+          )}
+          {props.decorationPicture?.url && (
+            <img
+              className="business-cards"
+              src={props.decorationPicture.url}
+              alt={props.decorationPicture.alt || ""}
+            />
+          )}
+        </div>
       </div>
-    </div>
-      </a>
+    </a>
   );
 };
 

@@ -9,7 +9,7 @@ import { HelmetDatoCms } from "gatsby-source-datocms";
 import "../styles/index.sass";
 import Header from "./Header";
 
-const TemplateWrapper = ({ children }) => {
+const TemplateWrapper = ({ children, props }) => {
   const [showMenu, setShowMenu] = useState(false);
   return (
     <StaticQuery
@@ -37,7 +37,6 @@ const TemplateWrapper = ({ children }) => {
             seo={data.datoCmsHome.seoMetaTags}
           />
           <div className="container__body">
-            <Header />
             {children}
           </div>
         </div>
