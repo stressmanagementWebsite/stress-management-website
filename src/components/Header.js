@@ -22,7 +22,7 @@ const Header = (props) => {
         setLogo(!logoVisible);
       }}
     >
-      <div className={`burger ${showMenu ? "open" : "closed"}`}>
+      <div className={`burger ${logoVisible ? "closed" : "open"}`}>
         <div className="burger_line" />
         <div className="burger_line" />
         <div className="burger_line" />
