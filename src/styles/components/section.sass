@@ -10,6 +10,11 @@
   align-items: center
   padding-top: 100px
 
+.section-wrapper-0 .section-paragraph-bottom
+  text-decoration: underline
+  text-decoration-color: $business-card-color
+  text-decoration-thickness: 2px
+
 .section-headline-container
   font-size: $headline-font-size-desktop
   text-align: center
@@ -17,18 +22,16 @@
 .section-headline
   position: relative
   z-index: 1
-  background-color: $business-card-color
-  color: $white
-  padding: 0 5px
+  color: $black
 
-  //&::before
-  //  content: ""
-  //  background-color: $partly-transparent-gray
-  //  width: 100%
-  //  height: 10px
-  //  position: absolute
-  //  top: 60%
-  //  z-index: -1
+  &::before
+    content: ""
+    background-color: $partly-transparent-gray
+    width: 100%
+    height: 10px
+    position: absolute
+    top: 60%
+    z-index: -1
 
 .section-headline-underline
   width: 830px
@@ -102,7 +105,6 @@
 .list-item-icon
   width: 15px
   height: 15px
-  // display: inline-block
   background-size: 100% 100%
   margin-left: 10px
   display: none
@@ -121,9 +123,17 @@
   color: red
   font-weight: bold
 
+.white-text
+  color: $white
+
+.enlarged-text
+  font-size: $enlarged-paragraph-font-size-desktop
+
 .highlighted
   background-color: $business-card-color
   padding: 0 5px
+  font-family: $highlight-font
+  font-size: 18px
 
 .list-item-icon-cross
   background-image: url("https://www.datocms-assets.com/45348/1616935874-cross-in-box-1.png")
@@ -147,9 +157,6 @@
 
 .section-paragraph-bottom
   width: 75%
-
-  .section-paragraph-main
-    padding-top: 15px
 
   & > p
     padding-bottom: 20px
@@ -191,6 +198,9 @@
   .section-headline-underline
     width: 630px
     height: 16px
+
+  .enlarged-text
+    font-size: $enlarged-paragraph-font-size
 
   .section-paragraph
     font-size: $paragraph-font-size
@@ -260,6 +270,9 @@
   .section-paragraph-bottom
     width: 60%
 
+  .enlarged-text
+    font-size: $enlarged-paragraph-font-size-tablet
+
   .section-additional-text-block
     font-size: $reduced-paragraph-font-size-tablet
 
@@ -291,6 +304,9 @@
 
   .section-paragraph
     font-size: $paragraph-font-size-mobile
+
+  .enlarged-text
+    font-size: $enlarged-paragraph-font-size-mobile
 
   .section-paragraph-main
     & > p > img
@@ -345,6 +361,9 @@
 
   .business-cards
     display: none
+
+  .enlarged-text
+    font-size: $enlarged-paragraph-font-size-mobile-smallest
 
   .section-headline-container
     font-size: $headline-font-size-mobile-smallest
