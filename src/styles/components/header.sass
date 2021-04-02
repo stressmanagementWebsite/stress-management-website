@@ -17,13 +17,13 @@
     margin-top: 8px
     position: relative
 
-    &:after
-      content: ""
-      width: 130px
-      height: 62px
-      position: absolute
-      left: 99%
-      background-color: $business-card-color
+    //&:after
+    //  content: ""
+    //  width: 130px
+    //  height: 62px
+    //  position: absolute
+    //  left: 99%
+    //  background-color: $business-card-color
 
   &-stage
     min-height: 100px
@@ -40,6 +40,29 @@
     .navItem
       a::after
         background-color: yellow
+
+.header-items-container
+  display: flex
+  width: calc(100% - 95px)
+  justify-content: space-between
+  align-items: center
+
+.language-switcher
+  display: flex
+  flex-direction: row
+  width: 150px
+  justify-content: space-between
+  align-items: center
+  padding-left: 20px
+  height: 24px
+
+.language-item
+  height: 24px
+  display: flex
+  align-items: center
+
+.language-item-active
+  border-bottom: 2px solid black
 
 .navItems_container
   display: flex
@@ -81,14 +104,14 @@
     background: $white
 
     &-logo
-      width: 52%
-      &:after
-        content: ""
-        width: 120%
-        height: 62px
-        position: absolute
-        left: 99%
-        background-color: $business-card-color
+      width: 160px
+      //&:after
+      //  content: ""
+      //  width: 120%
+      //  height: 62px
+      //  position: absolute
+      //  left: 99%
+      //  background-color: $business-card-color
 
     &-logo.closed
       display: block
@@ -143,6 +166,18 @@
       flex-direction: column
       transition: max-height 1s ease-out
       box-shadow: $dark-box-shadow
+
+    .language-switcher.open
+      display: none
+
+    .language-switcher.closed
+      display: flex
+
+    .header-items-container.open
+      display: none
+
+    .header-items-container.closed
+      display: flex
 
     .navItems_container.closed
       max-height: 0
