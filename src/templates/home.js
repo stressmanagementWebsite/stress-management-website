@@ -9,7 +9,9 @@ import Header from "../components/Header";
 
 const IndexPage = ({ data }) => (
   <Layout>
-    {data?.home?.header && <Header content={data.home.header} language={data.home.language} />}
+    {data?.home?.header && (
+      <Header content={data.home.header} language={data.home.language} />
+    )}
     <Section sectionContent={data.home.sections[0]} index={0} />
     <Section
       sectionContent={data.home.sections[1]}
@@ -24,6 +26,11 @@ const IndexPage = ({ data }) => (
     <Section
       sectionContent={data.home.sections[3]}
       index={3}
+      decorationPicture={data.home.decorationPicture}
+    />
+    <Section
+      sectionContent={data.home.sections[4]}
+      index={4}
       decorationPicture={data.home.decorationPicture}
     />
   </Layout>

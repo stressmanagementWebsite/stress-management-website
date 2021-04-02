@@ -4,7 +4,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "../styles/index.sass";
 
-const anchorNames = ["session1", "session2", "sessions1-10", "contacts"];
+const anchorNames = ["session1", "session2", "sessions1-10", "start", "contacts"];
 
 const Section = props => {
   return (

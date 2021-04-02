@@ -60,10 +60,17 @@ const Header = props => {
       </div>
       <div className={`navItems_container ${showMenu ? "open" : "closed"}`}>
         {props.content?.links?.map(item => (
-          <div className={`navItem navItem-${position}`}>
-            <Link className={position} to={item.href}>
+          <div
+            className={`navItem navItem-${position}`}
+            key={item.label}
+            onClick={() => {
+              setShowMenu(!showMenu);
+              setLogo(!logoVisible);
+            }}
+          >
+            <a className={position} href={item.href}>
               {item.label}
-            </Link>
+            </a>
           </div>
         ))}
       </div>
