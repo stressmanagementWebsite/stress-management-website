@@ -9,6 +9,10 @@
   justify-content: center
   align-items: center
   padding-top: 100px
+  padding-bottom: 22px
+
+.section-wrapper.section-wrapper-3
+  padding-bottom: 35px
 
 .section-wrapper-0 .section-paragraph-bottom
   text-decoration: underline
@@ -49,6 +53,9 @@
   flex-direction: column
   padding: 80px 120px
 
+.photo-container
+  margin-top: 20px
+
 .business-cards
   height: 740px
   width: 818px
@@ -63,6 +70,7 @@
   margin-top: 10px
   background-color: $business-card-color
   padding: 0 5px
+  text-align: center
 
 .section-paragraph
   font-size: $paragraph-font-size-desktop
@@ -293,6 +301,10 @@
     .paper
       padding-bottom: 100px
 
+  .section-wrapper-2
+    .paper
+      padding-bottom: 75px
+
   .paper
     min-height: 90%
     max-height: 95%
@@ -334,6 +346,15 @@
     & > p > img
       width: 12px
       height: 12px
+
+  .section-wrapper-3 .list-item
+    & > p
+      height: 30px
+      display: flex
+
+    & > p > img
+      width: 24px
+      height: 24px
 
   .section-additional-text-block
     font-size: $reduced-paragraph-font-size-mobile
