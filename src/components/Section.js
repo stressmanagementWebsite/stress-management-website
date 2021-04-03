@@ -4,7 +4,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "../styles/index.sass";
 
-const anchorNames = ["session1", "session2", "sessions1-10", "start", "contacts"];
+const anchorNames = ["session1", "stress", "session2", "sessions1-10", "start", "contacts"];
 
 const Section = props => {
   return (
@@ -23,6 +23,11 @@ const Section = props => {
               <h1 className="section-headline">{props.sectionContent.title}</h1>
             )}
           </p>
+          <p className="section-headline-container">
+            {props.sectionContent?.headlineSecondLine && (
+                <h1 className="section-headline">{props.sectionContent.headlineSecondLine}</h1>
+            )}
+          </p>
           {props.sectionContent?.subheadline && (
             <div
               className="section-subheadline"
@@ -31,7 +36,7 @@ const Section = props => {
               }}
             />
           )}
-          {props.sectionContent?.photo && (
+          {props.index !== 0 && props.sectionContent?.photo && (
             <div className="photo-container">
               <img
                 src={props.sectionContent.photo.url}
@@ -46,6 +51,22 @@ const Section = props => {
                 __html: props.sectionContent.paragraph
               }}
             />
+          )}
+          {props.index === 0 && props.sectionContent?.photo && (
+              <div className="photo-container">
+                <img
+                    src={props.sectionContent.photo.url}
+                    alt={props.sectionContent.photo.alt || "photo"}
+                />
+              </div>
+          )}
+          {props.index === 0 && props.sectionContent?.photoAdditional && (
+              <div className="photo-container">
+                <img
+                    src={props.sectionContent.photoAdditional.url}
+                    alt={props.sectionContent.photoAdditional.alt || "photo"}
+                />
+              </div>
           )}
           {props.sectionContent?.paragraphWithLists && (
             <div className="section-paragraph section-paragraph-with-lists section-paragraph-with-lists-desktop">
@@ -176,7 +197,7 @@ const Section = props => {
               }}
             />
           )}
-          {props.decorationPicture?.url && (
+          {props.index !== 0 && props.decorationPicture?.url && (
             <img
               className="business-cards"
               src={props.decorationPicture.url}
@@ -207,6 +228,14 @@ Section.propTypes = {
     subheadline: PropTypes.string,
     paragraph: PropTypes.string,
     additionalTextBlock: PropTypes.string,
+    photo: {
+      url: PropTypes.string,
+      alt: PropTypes.string
+    },
+    photoAdditional: {
+      url: PropTypes.string,
+      alt: PropTypes.string
+    },
     paragraphWithLists: PropTypes.arrayOf(
       PropTypes.shape({
         listItems: PropTypes.arrayOf(

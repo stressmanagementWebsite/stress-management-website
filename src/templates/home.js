@@ -10,29 +10,11 @@ import Header from "../components/Header";
 const IndexPage = ({ data }) => (
   <Layout>
     {data?.home?.header && (
-      <Header content={data.home.header} language={data.home.language} />
+      <Header content={data.home.header} language={data.home.language}/>
     )}
-    <Section sectionContent={data.home.sections[0]} index={0} />
-    <Section
-      sectionContent={data.home.sections[1]}
-      index={1}
-      decorationPicture={data.home.decorationPicture}
-    />
-    <Section
-      sectionContent={data.home.sections[2]}
-      index={2}
-      decorationPicture={data.home.decorationPicture}
-    />
-    <Section
-      sectionContent={data.home.sections[3]}
-      index={3}
-      decorationPicture={data.home.decorationPicture}
-    />
-    <Section
-      sectionContent={data.home.sections[4]}
-      index={4}
-      decorationPicture={data.home.decorationPicture}
-    />
+    {data.home.sections.map((section, index) => (
+      <Section sectionContent={section} index={index} decorationPicture={data.home.decorationPicture}/>
+    ))}
   </Layout>
 );
 
@@ -58,6 +40,7 @@ IndexPage.propTypes = {
         PropTypes.shape({
           title: PropTypes.string,
           subheadline: PropTypes.string,
+          headlineSecondLine: PropTypes.string,
           photo: {
             url: PropTypes.string,
             alt: PropTypes.string
@@ -106,8 +89,13 @@ export const query = graphql`
       }
       sections {
         title
+        headlineSecondLine
         subheadline
         photo {
+          url
+          alt
+        }
+        photoAdditional {
           url
           alt
         }
