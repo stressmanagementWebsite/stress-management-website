@@ -7,9 +7,11 @@
   cursor: auto !important
   color: $black
   border: 9px solid $black
+  box-sizing: border-box
+
 
   &-logo
-    width: 200px
+    width: 150px
     height: 70px
     background-size: 100% 100%
     background-position-y: -8px
@@ -17,44 +19,37 @@
     margin-top: 8px
     position: relative
 
-    //&:after
-    //  content: ""
-    //  width: 130px
-    //  height: 62px
-    //  position: absolute
-    //  left: 99%
-    //  background-color: $business-card-color
-
   &-stage
     min-height: 100px
     background: $white
     transition: min-height 1s linear, line-height 1s linear, box-shadow 1s linear
     line-height: 100px
     color: $black
-    // box-shadow: $standard-box-shadow
-
-    //.navItem
-    //  a::after
-    //    background-color: $bright-green
 
     .navItem
       a::after
-        background-color: yellow
+        background-color: $partly-transparent-gray
 
 .header-items-container
   display: flex
-  width: calc(100% - 95px)
+  width: 150px
   justify-content: space-between
   align-items: center
 
 .language-switcher
   display: flex
-  flex-direction: row
-  width: 150px
-  justify-content: space-between
+  flex-direction: column
+  width: 50px
+  justify-content: space-around
   align-items: center
   padding-left: 20px
-  height: 24px
+
+.language-switcher-mobile
+  display: none
+
+.language-switcher-desktop
+  margin-right: 30px
+  vertical-align: center
 
 .language-item
   height: 24px
@@ -73,12 +68,18 @@
 .navItem
   font-family: $main-font
   font-weight: 700
+  line-height: 18px
+  display: flex
+  justify-content: center
+  align-items: center
+  padding: 0 5px
 
   &-projects
     font-weight: 300
 
   a
     position: relative
+    line-height: 1
 
   a::after
     content: ''
@@ -99,6 +100,9 @@
 
 
 @media screen and (max-width: $smallBreakpoint)
+  .header-items-container
+    width: calc(100% - 95px)
+
   .header
     min-height: 70px
     background: $white
@@ -159,6 +163,20 @@
       flex-direction: column
       transition: max-height 1s ease-out
       box-shadow: $dark-box-shadow
+
+    .language-switcher
+      flex-direction: row
+      width: 150px
+      justify-content: space-between
+      align-items: center
+      padding-left: 20px
+      height: 24px
+
+    .language-switcher-mobile
+      display: block
+
+    .language-switcher-desktop
+      display: none !important
 
     .language-switcher.open
       display: none

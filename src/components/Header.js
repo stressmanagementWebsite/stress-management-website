@@ -23,7 +23,7 @@ const Header = props => {
           className={`header-logo ${logoVisible ? "closed" : "open"}`}
           style={{ backgroundImage: `url(${props.content?.logo?.url})` }}
         />
-        <div className={`language-switcher ${logoVisible ? "closed" : "open"}`}>
+        <div className={`language-switcher language-switcher-mobile ${logoVisible ? "closed" : "open"}`}>
           <a
             className={`language-item ${props.language === "en" &&
               "language-item-active"}`}
@@ -74,6 +74,29 @@ const Header = props => {
           </div>
         ))}
       </div>
+        <div className={`language-switcher language-switcher-desktop ${logoVisible ? "closed" : "open"}`}>
+            <a
+                className={`language-item ${props.language === "en" &&
+                "language-item-active"}`}
+                href="/en"
+            >
+                EN
+            </a>
+            <a
+                className={`language-item ${props.language === "ua" &&
+                "language-item-active"}`}
+                href="/ua"
+            >
+                UA
+            </a>
+            <a
+                className={`language-item ${props.language === "ru" &&
+                "language-item-active"}`}
+                href="/ru"
+            >
+                RU
+            </a>
+        </div>
     </div>
   );
 };
