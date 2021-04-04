@@ -53,7 +53,7 @@ const Section = props => {
             />
           )}
           {props.index === 0 && props.sectionContent?.photo && (
-              <div className="photo-container">
+              <div className="photo-container first-image">
                 <img
                     src={props.sectionContent.photo.url}
                     alt={props.sectionContent.photo.alt || "photo"}
@@ -61,7 +61,7 @@ const Section = props => {
               </div>
           )}
           {props.index === 0 && props.sectionContent?.photoAdditional && (
-              <div className="photo-container">
+              <div className="photo-container second-image">
                 <img
                     src={props.sectionContent.photoAdditional.url}
                     alt={props.sectionContent.photoAdditional.alt || "photo"}
