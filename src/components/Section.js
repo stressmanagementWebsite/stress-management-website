@@ -47,7 +47,7 @@ const Section = props => {
           )}
           {props.index !== 0 && props.sectionContent?.photo && (
             <div className="photo-container first-image">
-                <p className="text-on-photo">{props.sectionContent.textOnPhoto}</p>
+              {props.sectionContent.textOnPhoto && <p className="text-on-photo">{props.sectionContent.textOnPhoto}</p>}
               <img
                 src={props.sectionContent.photo.url}
                 alt={props.sectionContent.photo.alt || "photo"}
