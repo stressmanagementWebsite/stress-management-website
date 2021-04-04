@@ -4,7 +4,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import "../styles/index.sass";
 
-const anchorNames = ["session1", "stress", "session2", "sessions1-10", "start", "contacts"];
+const anchorNames = [
+  "session1",
+  "stress",
+  "session2",
+  "sessions1-10",
+  "start",
+  "contacts"
+];
 
 const Section = props => {
   return (
@@ -25,7 +32,9 @@ const Section = props => {
           </p>
           <p className="section-headline-container">
             {props.sectionContent?.headlineSecondLine && (
-                <h1 className="section-headline">{props.sectionContent.headlineSecondLine}</h1>
+              <h1 className="section-headline">
+                {props.sectionContent.headlineSecondLine}
+              </h1>
             )}
           </p>
           {props.sectionContent?.subheadline && (
@@ -38,6 +47,7 @@ const Section = props => {
           )}
           {props.index !== 0 && props.sectionContent?.photo && (
             <div className="photo-container first-image">
+                <p className="text-on-photo">{props.sectionContent.textOnPhoto}</p>
               <img
                 src={props.sectionContent.photo.url}
                 alt={props.sectionContent.photo.alt || "photo"}
@@ -53,20 +63,20 @@ const Section = props => {
             />
           )}
           {props.index === 0 && props.sectionContent?.photo && (
-              <div className="photo-container first-image">
-                <img
-                    src={props.sectionContent.photo.url}
-                    alt={props.sectionContent.photo.alt || "photo"}
-                />
-              </div>
+            <div className="photo-container first-image">
+              <img
+                src={props.sectionContent.photo.url}
+                alt={props.sectionContent.photo.alt || "photo"}
+              />
+            </div>
           )}
           {props.index === 0 && props.sectionContent?.photoAdditional && (
-              <div className="photo-container second-image">
-                <img
-                    src={props.sectionContent.photoAdditional.url}
-                    alt={props.sectionContent.photoAdditional.alt || "photo"}
-                />
-              </div>
+            <div className="photo-container second-image">
+              <img
+                src={props.sectionContent.photoAdditional.url}
+                alt={props.sectionContent.photoAdditional.alt || "photo"}
+              />
+            </div>
           )}
           {props.sectionContent?.paragraphWithLists && (
             <div className="section-paragraph section-paragraph-with-lists section-paragraph-with-lists-desktop">

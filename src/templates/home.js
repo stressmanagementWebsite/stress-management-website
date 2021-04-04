@@ -45,6 +45,7 @@ IndexPage.propTypes = {
             url: PropTypes.string,
             alt: PropTypes.string
           },
+          textOnPhoto: PropTypes.string,
           paragraph: PropTypes.string,
           additionalTextBlock: PropTypes.string,
           paragraphWithLists: PropTypes.arrayOf(
@@ -95,6 +96,7 @@ export const query = graphql`
           url
           alt
         }
+        textOnPhoto
         photoAdditional {
           url
           alt
