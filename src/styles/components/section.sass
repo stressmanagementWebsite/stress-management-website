@@ -406,12 +406,31 @@
   .highlighted
     font-size: 19px !important
 
-@media screen and (max-width: $extraSmallBreakpoint)
-  .flex-container-desktop
+@media screen and (max-width: $smallBreakpoint)
+  .section-wrapper
+    padding-bottom: 60px
+
+  .section-wrapper-0 .flex-container-desktop
     display: none
 
-  .section-wrapper.section-wrapper-2
-    padding-bottom: 40px
+  .section-wrapper-0 .flex-container-mobile
+    display: block
+    width: 100%
+
+  .section-wrapper.section-wrapper-0
+    .first-image
+      min-width: 256px
+
+
+  .paper
+    height: auto
+
+  .business-cards
+    height: 200px
+    width: 280px
+    right: -52px
+    bottom: -49px
+    object-fit: initial
 
   .section-wrapper-3, .section-wrapper-4, .section-wrapper-5
     img
@@ -424,17 +443,14 @@
       justify-content: space-between
 
     .section-paragraph, .section-paragraph-with-lists
-      width: 50%
+      width: 100%
 
-  .paper
-    min-height: 90%
-    max-height: 95%
-    width: 95%
-    padding: 20px 15px
-
-  .section-wrapper-0
-    p
-      padding-bottom: 0
+    .business-cards
+      height: 200px
+      width: 280px
+      right: -52px
+      bottom: -49px
+      object-fit: initial
 
   .section-wrapper-1
     .paper
@@ -446,11 +462,29 @@
 
   .section-wrapper-3
     .paper
-      padding-bottom: 85px
+      padding-bottom: 125px
+
+  .section-wrapper.section-wrapper-4
+    .paper
+      padding-bottom: 120px
 
   .section-wrapper-5
     .paper
-      padding-bottom: 150px
+      padding-bottom: 170px
+
+@media screen and (max-width: $extraSmallBreakpoint)
+  .section-wrapper.section-wrapper-2
+    padding-bottom: 40px
+
+  .paper
+    min-height: 90%
+    max-height: 95%
+    width: 95%
+    padding: 20px 15px
+
+  .section-wrapper-0
+    p
+      padding-bottom: 0
 
   .section-headline-container
     font-size: $headline-font-size-mobile
@@ -520,12 +554,6 @@
 
   .list-container-2
     width: 56%
-
-  .business-cards
-    height: 200px
-    width: 280px
-    right: -52px
-    bottom: -49px
 
 
 @media screen and (max-width: $smallestBreakpoint)
