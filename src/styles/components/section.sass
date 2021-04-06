@@ -15,7 +15,8 @@
   height: calc(100vh - 82px)
   width: 98%
   background-color: $paper-color
-  font-family: $main-font
+  // font-family: $main-font, $cyrillic-font
+  font-family: $main-font, $cyrillic-font, sans-serif
   position: relative
   display: flex
   align-items: center
@@ -537,6 +538,9 @@
 
   .section-additional-text-block
     font-size: $reduced-paragraph-font-size-mobile
+
+    strong
+      font-weight: 900
 
   .section-paragraph-bottom
     width: 100%
