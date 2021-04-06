@@ -6,8 +6,8 @@ import "../styles/index.sass";
 
 const anchorNames = [
   "session1",
-  "stress",
   "session2",
+  "session3",
   "sessions1-10",
   "start",
   "contacts"
@@ -45,40 +45,89 @@ const Section = props => {
               }}
             />
           )}
-          {props.index !== 0 && props.sectionContent?.photo && (
-            <div className="photo-container first-image">
-              {props.sectionContent.textOnPhoto && <p className="text-on-photo">{props.sectionContent.textOnPhoto}</p>}
-              <img
-                src={props.sectionContent.photo.url}
-                alt={props.sectionContent.photo.alt || "photo"}
+          <div className="paper-inner-container">
+            {props.index !== 0 && props.sectionContent?.photo && (
+              <div className="photo-container first-image">
+                {props.sectionContent.textOnPhoto && (
+                  <p className="text-on-photo">
+                    {props.sectionContent.textOnPhoto}
+                  </p>
+                )}
+                <img
+                  src={props.sectionContent.photo.url}
+                  alt={props.sectionContent.photo.alt || "photo"}
+                />
+              </div>
+            )}
+            {props.index !== 0 && props.sectionContent?.paragraph && (
+              <div
+                className="section-paragraph section-paragraph-main"
+                dangerouslySetInnerHTML={{
+                  __html: props.sectionContent.paragraph
+                }}
               />
+            )}
+          </div>
+          {props.index === 0 && (
+            <div className="flex-container-mobile">
+              {props.sectionContent?.paragraph && (
+                <div
+                  className="section-paragraph section-paragraph-main"
+                  dangerouslySetInnerHTML={{
+                    __html: props.sectionContent.paragraph
+                  }}
+                />
+              )}
+              {props.index === 0 && props.sectionContent?.photo && (
+                <div className="photo-container first-image">
+                  <img
+                    src={props.sectionContent.photo.url}
+                    alt={props.sectionContent.photo.alt || "photo"}
+                  />
+                </div>
+              )}
+              {props.index === 0 && props.sectionContent?.photoAdditional && (
+                <div className="photo-container second-image">
+                  <img
+                    src={props.sectionContent.photoAdditional.url}
+                    alt={props.sectionContent.photoAdditional.alt || "photo"}
+                  />
+                </div>
+              )}
             </div>
           )}
-          {props.sectionContent?.paragraph && (
-            <div
-              className="section-paragraph section-paragraph-main"
-              dangerouslySetInnerHTML={{
-                __html: props.sectionContent.paragraph
-              }}
-            />
-          )}
-          {props.index === 0 && props.sectionContent?.photo && (
-            <div className="photo-container first-image">
-              <img
-                src={props.sectionContent.photo.url}
-                alt={props.sectionContent.photo.alt || "photo"}
-              />
+
+          {props.index === 0 && (
+            <div className="flex-container-desktop">
+              <div className="flex-container-desktop-inner">
+                {props.sectionContent?.paragraph && (
+                  <div
+                    className="section-paragraph section-paragraph-main"
+                    dangerouslySetInnerHTML={{
+                      __html: props.sectionContent.paragraph
+                    }}
+                  />
+                )}
+                {props.index === 0 && props.sectionContent?.photoAdditional && (
+                  <div className="photo-container second-image">
+                    <img
+                      src={props.sectionContent.photoAdditional.url}
+                      alt={props.sectionContent.photoAdditional.alt || "photo"}
+                    />
+                  </div>
+                )}
+              </div>
+              {props.index === 0 && props.sectionContent?.photo && (
+                <div className="photo-container first-image">
+                  <img
+                    src={props.sectionContent.photo.url}
+                    alt={props.sectionContent.photo.alt || "photo"}
+                  />
+                </div>
+              )}
             </div>
           )}
-          {props.index === 0 && props.sectionContent?.photoAdditional && (
-            <div className="photo-container second-image">
-              <img
-                src={props.sectionContent.photoAdditional.url}
-                alt={props.sectionContent.photoAdditional.alt || "photo"}
-              />
-            </div>
-          )}
-          {props.sectionContent?.paragraphWithLists && (
+          {props.sectionContent?.paragraphWithLists?.length > 0 && (
             <div className="section-paragraph section-paragraph-with-lists section-paragraph-with-lists-desktop">
               {props.sectionContent?.paragraphWithLists.map((list, index) => {
                 return (
@@ -109,7 +158,7 @@ const Section = props => {
               })}
             </div>
           )}
-          {props.sectionContent?.paragraphWithLists && (
+          {props.sectionContent?.paragraphWithLists?.length > 0 && (
             <div className="section-paragraph section-paragraph-with-lists section-paragraph-with-lists-mobile">
               {props.sectionContent?.paragraphWithLists.map((list, index) => {
                 if (index === 2) {
@@ -125,7 +174,9 @@ const Section = props => {
                                 ? "list-item-negative"
                                 : "list-item-positive"
                             }`}
-                            dangerouslySetInnerHTML={{ __html: listItem?.item }}
+                            dangerouslySetInnerHTML={{
+                              __html: listItem?.item
+                            }}
                           />
                           <div
                             className={`list-item-icon ${
@@ -151,7 +202,9 @@ const Section = props => {
                                 ? "list-item-negative"
                                 : "list-item-positive"
                             }`}
-                            dangerouslySetInnerHTML={{ __html: listItem?.item }}
+                            dangerouslySetInnerHTML={{
+                              __html: listItem?.item
+                            }}
                           />
                           <div
                             className={`list-item-icon ${

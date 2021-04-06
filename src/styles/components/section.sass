@@ -8,8 +8,63 @@
   display: flex
   justify-content: center
   align-items: center
-  padding-top: 100px
+  padding-top: 82px
   padding-bottom: 28px
+
+.paper
+  height: calc(100vh - 82px)
+  width: 98%
+  background-color: $paper-color
+  font-family: $main-font
+  position: relative
+  display: flex
+  align-items: center
+  flex-direction: column
+  padding: 80px 120px
+
+.section-wrapper-0
+  .paper
+    padding-bottom: 80px
+
+  .flex-container-mobile
+    display: none
+
+  .flex-container-desktop
+    display: flex
+    flex-wrap: wrap
+    flex-direction: row
+    width: 100%
+    justify-content: space-between
+
+    .flex-container-desktop-inner
+      display: flex
+      width: 50%
+      flex-direction: column
+
+    .section-paragraph
+      width: 100%
+  //.paper-content-container
+  //  display: flex
+  //  flex-wrap: wrap
+  //  flex-direction: row
+  //  width: 100%
+  //  justify-content: space-around
+  //
+  //.section-paragraph
+  //  width: 60%
+
+.section-wrapper-3, .section-wrapper-4, .section-wrapper-5
+  img
+    width: 450px
+    object-fit: cover
+
+  .paper-inner-container
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+
+  .section-paragraph, .section-paragraph-with-lists
+    width: 50%
 
 .section-wrapper.section-wrapper-4
   .paper
@@ -51,32 +106,21 @@
   height: 18px
   object-fit: cover
 
-.paper
-  min-height: 85%
-  width: 90%
-  background-color: $paper-color
-  font-family: $main-font
-  position: relative
-  display: flex
-  align-items: center
-  flex-direction: column
-  padding: 80px 120px
-
 .section-wrapper.section-wrapper-0
   .first-image
     background: linear-gradient(#b0b0b0, #fefefe)
-    width: 100%
+    min-width: 450px
     display: flex
     align-items: center
     justify-content: center
     img
-      height: 350px
+      height: 500px
       filter: grayscale(100%)
       border: none
 
   .second-image
     img
-      height: 256px
+      height: 400px
       object-fit: cover
 
 .section-wrapper-4
@@ -104,6 +148,9 @@
   background-color: $business-card-color
   padding: 0 5px
   text-align: center
+
+.paper-inner-container
+  width: 100%
 
 .section-paragraph
   font-size: $paragraph-font-size-desktop
@@ -194,7 +241,7 @@
   background-color: $business-card-color
   padding: 0 5px
   font-family: $highlight-font
-  font-size: 19px !important
+  font-size: 23px !important
 
 .list-item-icon-cross
   background-image: url("https://www.datocms-assets.com/45348/1616935874-cross-in-box-1.png")
@@ -235,7 +282,8 @@
   color: $black
   padding: 15px 15px 0 15px
   margin-bottom: 15px
-  font-size: $reduced-paragraph-font-size
+  font-size: $reduced-paragraph-font-size !important
+  width: 70%
 
   & > p
     padding-bottom: 15px
@@ -281,7 +329,7 @@
       padding-bottom: 15px
 
   .paper
-    padding: 40px 80px
+    padding: 40px 80px 60px
 
   .list-item
     & > p > img
@@ -315,6 +363,24 @@
   .section-subheadline
     font-size: $subheadline-font-size-tablet
 
+  .section-wrapper.section-wrapper-0
+    .first-image
+      background: linear-gradient(#b0b0b0, #fefefe)
+      width: 100%
+      display: flex
+      align-items: center
+      justify-content: center
+
+      img
+        height: 350px
+        filter: grayscale(100%)
+        border: none
+
+    .second-image
+      img
+        height: 256px
+        object-fit: cover
+
   .list-container-0
     width: 19%
 
@@ -334,12 +400,31 @@
     font-size: $enlarged-paragraph-font-size-tablet
 
   .section-additional-text-block
+    width: 100%
     font-size: $reduced-paragraph-font-size-tablet
 
+  .highlighted
+    font-size: 19px !important
+
 @media screen and (max-width: $extraSmallBreakpoint)
+  .flex-container-desktop
+    display: none
+
   .section-wrapper.section-wrapper-2
     padding-bottom: 40px
 
+  .section-wrapper-3, .section-wrapper-4, .section-wrapper-5
+    img
+      width: 450px
+      object-fit: cover
+
+    .paper-inner-container
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+
+    .section-paragraph, .section-paragraph-with-lists
+      width: 50%
 
   .paper
     min-height: 90%
