@@ -9,10 +9,10 @@
   justify-content: center
   align-items: center
   padding-top: 82px
-  padding-bottom: 28px
+  padding-bottom: 55px
 
 .paper
-  height: calc(100vh - 82px)
+  min-height: calc(100vh)
   width: 98%
   background-color: $paper-color
   // font-family: $main-font, $cyrillic-font
@@ -44,28 +44,30 @@
 
     .section-paragraph
       width: 100%
-  //.paper-content-container
-  //  display: flex
-  //  flex-wrap: wrap
-  //  flex-direction: row
-  //  width: 100%
-  //  justify-content: space-around
-  //
-  //.section-paragraph
-  //  width: 60%
 
 .section-wrapper-3, .section-wrapper-4, .section-wrapper-5
-  img
-    width: 450px
-    object-fit: cover
+  .first-image
+    // width: 43%
+    img
+      // width: 100%
+      width: 500px
+      object-fit: cover
+
+  .paper
+    min-height: 85vh
 
   .paper-inner-container
     display: flex
     flex-wrap: wrap
     justify-content: space-between
+    padding-top: 20px
 
   .section-paragraph, .section-paragraph-with-lists
-    width: 50%
+    width: 55%
+    padding-top: 20px
+
+  .list-container
+    width: 100%
 
 .section-wrapper.section-wrapper-4
   .paper
@@ -73,9 +75,10 @@
 
 .section-wrapper.section-wrapper-5
   padding-top: 20px
-  min-height: 50vh
-  padding-bottom: 35px
+  min-height: 60vh
+  padding-bottom: 65px
   .paper
+    min-height: 60vh
     padding-bottom: 60px
 
 .section-wrapper-1 .section-paragraph-bottom
@@ -135,13 +138,12 @@
   position: relative
 
 .business-cards
-  height: 740px
-  width: 818px
+  height: 330px
   position: absolute
   -o-object-fit: contain
   object-fit: contain
-  right: -200px
-  bottom: -195px
+  right: 7px
+  bottom: -38px
 
 .section-subheadline
   font-size: $subheadline-font-size-desktop
@@ -294,10 +296,9 @@
 
 @media screen and (max-width: $extraLargeBreakpoint)
   .business-cards
-    height: 540px
-    width: 618px
-    right: -150px
-    bottom: -160px
+    height: 300px
+    right: 7px
+    bottom: -38px
 
   .section-headline-container
     font-size: $headline-font-size
@@ -348,69 +349,138 @@
       width: 14px
       height: 14px
 
-@media screen and (max-width: $mediumBreakpoint)
-  .paper
-    min-height: 90%
-    padding: 20px 30px
-
-  .section-headline-container
-    font-size: $headline-font-size-tablet
-
-  .section-headline-underline
-    width: 500px
-    height: 16px
-    margin-top: 5px
-
-  .section-subheadline
-    font-size: $subheadline-font-size-tablet
-
-  .section-wrapper.section-wrapper-0
-    .first-image
-      background: linear-gradient(#b0b0b0, #fefefe)
-      width: 100%
-      display: flex
-      align-items: center
-      justify-content: center
-
-      img
-        height: 350px
-        filter: grayscale(100%)
-        border: none
-
-    .second-image
-      img
-        height: 256px
-        object-fit: cover
-
-  .list-container-0
-    width: 19%
-
-  .list-container-2
-    width: 50%
-
+@media screen and (max-width: $largeBreakpoint)
   .business-cards
-    height: 400px
-    width: 490px
-    right: -120px
-    bottom: -107px
+    height: 280px
+    right: 7px
+    bottom: -38px
 
-  .section-paragraph-bottom
-    width: 60%
+//@media screen and (max-width: $mediumBreakpoint)
+//  .paper
+//    min-height: 90%
+//    padding: 20px 30px
+//
+//  .section-headline-container
+//    font-size: $headline-font-size-tablet
+//
+//  .section-headline-underline
+//    width: 500px
+//    height: 16px
+//    margin-top: 5px
+//
+//  .section-subheadline
+//    font-size: $subheadline-font-size-tablet
+//
+//  .section-wrapper.section-wrapper-0
+//    .first-image
+//      background: linear-gradient(#b0b0b0, #fefefe)
+//      width: 100%
+//      display: flex
+//      align-items: center
+//      justify-content: center
+//
+//      img
+//        height: 350px
+//        filter: grayscale(100%)
+//        border: none
+//
+//    .second-image
+//      img
+//        height: 256px
+//        object-fit: cover
+//
+//  .list-container-0
+//    width: 19%
+//
+//  .list-container-2
+//    width: 50%
+//
+//  .business-cards
+//    height: 400px
+//    width: 490px
+//    right: -120px
+//    bottom: -107px
+//
+//  .section-paragraph-bottom
+//    width: 60%
+//
+//  .enlarged-text
+//    font-size: $enlarged-paragraph-font-size-tablet
+//
+//  .section-additional-text-block
+//    width: 100%
+//    font-size: $reduced-paragraph-font-size-tablet
+//
+//  .highlighted
+//    font-size: 19px !important
 
-  .enlarged-text
-    font-size: $enlarged-paragraph-font-size-tablet
+//@media screen and (max-width: $smallBreakpoint)
+//  .section-wrapper
+//    padding-bottom: 60px
+//
+//  .section-wrapper-0 .flex-container-desktop
+//    display: none
+//
+//  .section-wrapper-0 .flex-container-mobile
+//    display: block
+//    width: 100%
+//
+//  .section-wrapper.section-wrapper-0
+//    .first-image
+//      min-width: 256px
+//
+//
+//  .paper
+//    height: auto
+//
+//  .business-cards
+//    height: 200px
+//    width: 280px
+//    right: -52px
+//    bottom: -49px
+//    object-fit: initial
+//
+//  .section-wrapper-3, .section-wrapper-4, .section-wrapper-5
+//    img
+//      width: 450px
+//      object-fit: cover
+//
+//    .paper-inner-container
+//      display: flex
+//      flex-wrap: wrap
+//      justify-content: space-between
+//
+//    .section-paragraph, .section-paragraph-with-lists
+//      width: 100%
+//
+//    .business-cards
+//      height: 200px
+//      width: 280px
+//      right: -52px
+//      bottom: -49px
+//      object-fit: initial
+//
+//  .section-wrapper-1
+//    .paper
+//      padding-bottom: 120px
+//
+//  .section-wrapper-2
+//    .paper
+//      padding-bottom: 100px
+//
+//  .section-wrapper-3
+//    .paper
+//      padding-bottom: 125px
+//
+//  .section-wrapper.section-wrapper-4
+//    .paper
+//      padding-bottom: 120px
+//
+//  .section-wrapper-5
+//    .paper
+//      padding-bottom: 170px
 
-  .section-additional-text-block
-    width: 100%
-    font-size: $reduced-paragraph-font-size-tablet
-
-  .highlighted
-    font-size: 19px !important
-
-@media screen and (max-width: $smallBreakpoint)
-  .section-wrapper
-    padding-bottom: 60px
-
+@media screen and (max-width: $mediumBreakpoint)
   .section-wrapper-0 .flex-container-desktop
     display: none
 
@@ -418,64 +488,34 @@
     display: block
     width: 100%
 
-  .section-wrapper.section-wrapper-0
     .first-image
-      min-width: 256px
+      min-width: auto
 
+      img
+        height: 350px
 
-  .paper
-    height: auto
-
-  .business-cards
-    height: 200px
-    width: 280px
-    right: -52px
-    bottom: -49px
-    object-fit: initial
-
-  .section-wrapper-3, .section-wrapper-4, .section-wrapper-5
-    img
-      width: 450px
-      object-fit: cover
-
-    .paper-inner-container
-      display: flex
-      flex-wrap: wrap
-      justify-content: space-between
-
-    .section-paragraph, .section-paragraph-with-lists
+    .second-image
       width: 100%
 
-    .business-cards
-      height: 200px
-      width: 280px
-      right: -52px
-      bottom: -49px
-      object-fit: initial
+      img
+        height: 256px
 
-  .section-wrapper-1
-    .paper
-      padding-bottom: 120px
-
-  .section-wrapper-2
-    .paper
-      padding-bottom: 100px
-
-  .section-wrapper-3
-    .paper
-      padding-bottom: 125px
-
-  .section-wrapper.section-wrapper-4
-    .paper
-      padding-bottom: 120px
-
-  .section-wrapper-5
-    .paper
-      padding-bottom: 170px
-
-@media screen and (max-width: $extraSmallBreakpoint)
-  .section-wrapper.section-wrapper-2
+  .section-wrapper.section-wrapper-1, .section-wrapper.section-wrapper-2
     padding-bottom: 40px
+
+    .paper
+      padding-bottom: 160px
+
+  .section-wrapper.section-wrapper-3
+    .paper
+      padding-bottom: 140px
+
+  .section-wrapper-3, .section-wrapper-4, .section-wrapper-5
+    .paper-inner-container
+      justify-content: space-around
+
+    .section-paragraph
+      width: 100%
 
   .paper
     min-height: 90%
@@ -502,6 +542,9 @@
 
   .enlarged-text
     font-size: $enlarged-paragraph-font-size-mobile
+
+  .highlighted
+    font-size: 19px !important
 
   .section-paragraph-main
     & > p > img
@@ -538,6 +581,8 @@
 
   .section-additional-text-block
     font-size: $reduced-paragraph-font-size-mobile
+    width: 100%
+    margin-top: 10px
 
     strong
       font-weight: 900
@@ -559,6 +604,16 @@
   .list-container-2
     width: 56%
 
+  .business-cards
+    height: 224px
+
+@media screen and (max-width: $smallBreakpoint)
+  .business-cards
+    height: 170px
+
+  .section-wrapper.section-wrapper-4
+    .paper
+      padding-bottom: 140px
 
 @media screen and (max-width: $smallestBreakpoint)
   .section-wrapper.section-wrapper-2
