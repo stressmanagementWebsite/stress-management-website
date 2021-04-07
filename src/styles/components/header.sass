@@ -12,14 +12,17 @@
   &-inner-wrapper
     width: 100%
     display: inherit
+    background-image: url("https://www.margaretriver.com/wp-content/uploads/2018/07/Mick-Corbett-credit-Andrew-Semark-Photography.jpg")
+    border: 8px solid white
+    background-size: cover
+    background-position-y: 744px
+    background-position-x: center
 
   &-logo
     width: 150px
     height: 70px
     background-size: 100% 100%
-    background-position-y: -8px
     background-repeat: no-repeat
-    margin-top: 8px
     position: relative
 
   &-stage
@@ -27,7 +30,7 @@
     background: $white
     transition: min-height 1s linear, line-height 1s linear, box-shadow 1s linear
     line-height: 100px
-    color: $black
+    color: $white
 
     .navItem
       a::after
@@ -111,8 +114,7 @@
     background: $white
 
     &-inner-wrapper
-      background-color: $business-card-color
-      border: 8px solid white
+      background-position: center
 
     &-logo
       width: 160px
@@ -239,8 +241,8 @@
         line-height: 60px
         color: $black
 
-      //a:hover, a:active
-      //  color: $dark-grey
+      a:hover, a:active
+        color: $dark-grey
 
       a::after
         content: ''
