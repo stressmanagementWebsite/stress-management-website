@@ -294,6 +294,14 @@
   & > p > strong
     font-weight: 900
 
+.verification-badge
+  img
+    width: 110px
+    position: absolute
+    object-fit: contain
+    bottom: -14px
+    left: 15px
+
 @media screen and (max-width: $extraLargeBreakpoint)
   .business-cards
     height: 300px
@@ -481,6 +489,15 @@
 //      padding-bottom: 170px
 
 @media screen and (max-width: $mediumBreakpoint)
+  .paper
+    min-height: 90%
+    max-height: 95%
+    width: 98%
+    padding: 20px 15px
+
+  .section-wrapper
+    padding-top: 95px
+
   .section-wrapper-0 .flex-container-desktop
     display: none
 
@@ -496,6 +513,8 @@
 
     .second-image
       width: 100%
+      display: flex
+      justify-content: center
 
       img
         height: 256px
@@ -516,12 +535,6 @@
 
     .section-paragraph
       width: 100%
-
-  .paper
-    min-height: 90%
-    max-height: 95%
-    width: 95%
-    padding: 20px 15px
 
   .section-wrapper-0
     p
@@ -607,6 +620,11 @@
   .business-cards
     height: 224px
 
+  .verification-badge
+    img
+      width: 80px
+      bottom: 0
+
 @media screen and (max-width: $smallBreakpoint)
   .business-cards
     height: 170px
@@ -614,6 +632,9 @@
   .section-wrapper.section-wrapper-4
     .paper
       padding-bottom: 140px
+
+  .paper
+    width: 95%
 
 @media screen and (max-width: $smallestBreakpoint)
   .section-wrapper.section-wrapper-2

@@ -13,7 +13,7 @@ const IndexPage = ({ data }) => (
       <Header content={data.home.header} language={data.home.language}/>
     )}
     {data.home.sections.map((section, index) => (
-      <Section sectionContent={section} index={index} decorationPicture={data.home.decorationPicture}/>
+      <Section sectionContent={section} index={index} decorationPicture={data.home.decorationPicture} verificationBadge={data.home.verificationBadge} />
     ))}
   </Layout>
 );
@@ -84,10 +84,7 @@ export const query = graphql`
         url
         alt
       }
-      underline {
-        url
-        alt
-      }
+      verificationBadge
       sections {
         title
         headlineSecondLine

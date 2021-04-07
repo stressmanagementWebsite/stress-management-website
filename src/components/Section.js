@@ -295,6 +295,7 @@ const Section = props => {
               alt={props.decorationPicture.alt || ""}
             />
           )}
+          {props.verificationBadge && <div className="verification-badge" dangerouslySetInnerHTML={{ __html: props.verificationBadge}} />}
         </div>
       </div>
     </a>

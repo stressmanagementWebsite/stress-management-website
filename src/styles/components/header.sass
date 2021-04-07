@@ -9,6 +9,9 @@
   border: 9px solid $black
   box-sizing: border-box
 
+  &-inner-wrapper
+    width: 100%
+    display: inherit
 
   &-logo
     width: 150px
@@ -107,8 +110,14 @@
     min-height: 70px
     background: $white
 
+    &-inner-wrapper
+      background-color: $business-card-color
+      border: 8px solid white
+
     &-logo
       width: 160px
+      margin: 0
+      background-position-Y: unset
 
     &-logo.closed
       display: block

@@ -16,6 +16,7 @@ const Header = props => {
 
   return (
     <div className={`header header-${position}`}>
+        <div className="header-inner-wrapper">
       <div
         className={`header-items-container ${logoVisible ? "closed" : "open"}`}
       >
@@ -96,6 +97,7 @@ const Header = props => {
             >
                 RU
             </a>
+        </div>
         </div>
     </div>
   );
