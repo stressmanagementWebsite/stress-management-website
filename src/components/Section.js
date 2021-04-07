@@ -295,7 +295,12 @@ const Section = props => {
               alt={props.decorationPicture.alt || ""}
             />
           )}
-          {props.verificationBadge && <div className="verification-badge" dangerouslySetInnerHTML={{ __html: props.verificationBadge}} />}
+          {props.index !== 0 && props.verificationBadge && (
+            <div
+              className="verification-badge"
+              dangerouslySetInnerHTML={{ __html: props.verificationBadge }}
+            />
+          )}
         </div>
       </div>
     </a>
@@ -315,6 +320,7 @@ Section.propTypes = {
     url: PropTypes.string,
     alt: PropTypes.string
   },
+  verificationBadge: PropTypes.string,
   sectionContent: {
     title: PropTypes.string,
     subheadline: PropTypes.string,
