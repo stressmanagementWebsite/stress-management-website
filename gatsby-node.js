@@ -27,7 +27,7 @@ exports.createPages = ({ graphql, actions }) => {
           createRedirect({
             fromPath: `/`,
             toPath: `/en`,
-            redirectInBrowser: false,
+            redirectInBrowser: true,
             isPermanent: true
           });
       });
