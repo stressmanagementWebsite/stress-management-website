@@ -2,10 +2,13 @@ import React from "react";
 import * as PropTypes from "prop-types";
 import { Router, Redirect } from "@reach/router";
 import Layout from "../components/layout";
+import { graphql } from "gatsby";
+import Header from "../components/Header";
+import Section from "../components/Section";
 
 const IndexPage = ({ location, data }) => (
     <Layout>
-      <p>This page is blank</p>
+       Sorry, this page is not existing
     </Layout>
 );
 

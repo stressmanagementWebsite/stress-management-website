@@ -23,13 +23,7 @@ exports.createPages = ({ graphql, actions }) => {
           context: {
             slug: homePage.slug
           }
-        }),
-          createRedirect({
-            fromPath: `/`,
-            toPath: `/en`,
-            redirectInBrowser: true,
-            isPermanent: true
-          });
+        })
       });
       resolve();
     });
