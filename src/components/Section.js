@@ -288,6 +288,7 @@ const Section = props => {
               }}
             />
           )}
+          {props.index !== 0 && <div className="business-cards-placeholder" />}
           {props.index !== 0 && props.decorationPicture?.url && (
             <img
               className="business-cards"

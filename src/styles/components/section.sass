@@ -1,5 +1,6 @@
 .section-wrapper
-  min-height: 100vh
+  // min-height: 100vh
+  height: fit-content
   width: 100%
   overflow: hidden
   background-color: $black
@@ -12,10 +13,10 @@
   padding-bottom: 55px
 
 .paper
-  min-height: calc(100vh)
+  // min-height: calc(100vh)
+  height: fit-content
   width: 98%
   background-color: $paper-color
-  // font-family: $main-font, $cyrillic-font
   font-family: $main-font, $cyrillic-font, sans-serif
   position: relative
   display: flex
@@ -46,19 +47,23 @@
       width: 100%
 
 .section-wrapper-1, .section-wrapper-2
+  .business-cards-placeholder
+    height: 100px
   .paper
-    padding-bottom: 100px
+    // padding-bottom: 100px
 
 .section-wrapper-3, .section-wrapper-4, .section-wrapper-5
   .first-image
-    // width: 43%
+    width: 43%
+    height: fit-content
     img
-      // width: 100%
-      width: 500px
+      width: 100%
+      // width: 500px
       object-fit: cover
 
   .paper
-    min-height: 90vh
+    min-height: fit-content
+    padding-bottom: 0
 
   .paper-inner-container
     display: flex
@@ -73,17 +78,13 @@
   .list-container
     width: 100%
 
-.section-wrapper.section-wrapper-4
-  .paper
-    padding-bottom: 80px
-
 .section-wrapper.section-wrapper-5
   padding-top: 20px
-  min-height: 60vh
-  padding-bottom: 65px
+  // min-height: 60vh
+  // padding-bottom: 65px
   .paper
-    min-height: 60vh
-    padding-bottom: 60px
+    // min-height: 60vh
+    // padding-bottom: 60px
 
 .section-wrapper-1 .section-paragraph-bottom
   text-decoration: underline
@@ -284,6 +285,10 @@
     width: 22px
     height: 22px
 
+.business-cards-placeholder
+  height: 220px
+  width: 500px
+
 .section-additional-text-block
   background-color: $business-card-color
   color: $black
@@ -303,14 +308,17 @@
     width: 110px
     position: absolute
     object-fit: contain
-    bottom: 5px
-    left: 15px
+    bottom: 22px
+    left: 30px
 
 @media screen and (max-width: $extraLargeBreakpoint)
   .business-cards
     height: 300px
     right: 7px
     bottom: -38px
+
+  .business-cards-placeholder
+    height: 280px
 
   .section-headline-container
     font-size: $headline-font-size
@@ -343,11 +351,23 @@
       padding-bottom: 15px
 
   .paper
-    padding: 40px 80px 80px
+    // padding: 40px 80px 80px
 
   .section-wrapper-3, .section-wrapper-4, .section-wrapper-5
     .paper
-      min-height: 85vh
+      // min-height: 85vh
+
+    .first-image
+      img
+        // width: 490px
+
+    .section-paragraph, .section-paragraph-main
+      padding-left: 15px
+      width: 54%
+
+  .section-wrapper-5
+    .business-cards-placeholder
+      height: 200px
 
   .list-item
     & > p > img
@@ -371,135 +391,8 @@
     right: 7px
     bottom: -38px
 
-//@media screen and (max-width: $mediumBreakpoint)
-//  .paper
-//    min-height: 90%
-//    padding: 20px 30px
-//
-//  .section-headline-container
-//    font-size: $headline-font-size-tablet
-//
-//  .section-headline-underline
-//    width: 500px
-//    height: 16px
-//    margin-top: 5px
-//
-//  .section-subheadline
-//    font-size: $subheadline-font-size-tablet
-//
-//  .section-wrapper.section-wrapper-0
-//    .first-image
-//      background: linear-gradient(#b0b0b0, #fefefe)
-//      width: 100%
-//      display: flex
-//      align-items: center
-//      justify-content: center
-//
-//      img
-//        height: 350px
-//        filter: grayscale(100%)
-//        border: none
-//
-//    .second-image
-//      img
-//        height: 256px
-//        object-fit: cover
-//
-//  .list-container-0
-//    width: 19%
-//
-//  .list-container-2
-//    width: 50%
-//
-//  .business-cards
-//    height: 400px
-//    width: 490px
-//    right: -120px
-//    bottom: -107px
-//
-//  .section-paragraph-bottom
-//    width: 60%
-//
-//  .enlarged-text
-//    font-size: $enlarged-paragraph-font-size-tablet
-//
-//  .section-additional-text-block
-//    width: 100%
-//    font-size: $reduced-paragraph-font-size-tablet
-//
-//  .highlighted
-//    font-size: 19px !important
-
-//@media screen and (max-width: $smallBreakpoint)
-//  .section-wrapper
-//    padding-bottom: 60px
-//
-//  .section-wrapper-0 .flex-container-desktop
-//    display: none
-//
-//  .section-wrapper-0 .flex-container-mobile
-//    display: block
-//    width: 100%
-//
-//  .section-wrapper.section-wrapper-0
-//    .first-image
-//      min-width: 256px
-//
-//
-//  .paper
-//    height: auto
-//
-//  .business-cards
-//    height: 200px
-//    width: 280px
-//    right: -52px
-//    bottom: -49px
-//    object-fit: initial
-//
-//  .section-wrapper-3, .section-wrapper-4, .section-wrapper-5
-//    img
-//      width: 450px
-//      object-fit: cover
-//
-//    .paper-inner-container
-//      display: flex
-//      flex-wrap: wrap
-//      justify-content: space-between
-//
-//    .section-paragraph, .section-paragraph-with-lists
-//      width: 100%
-//
-//    .business-cards
-//      height: 200px
-//      width: 280px
-//      right: -52px
-//      bottom: -49px
-//      object-fit: initial
-//
-//  .section-wrapper-1
-//    .paper
-//      padding-bottom: 120px
-//
-//  .section-wrapper-2
-//    .paper
-//      padding-bottom: 100px
-//
-//  .section-wrapper-3
-//    .paper
-//      padding-bottom: 125px
-//
-//  .section-wrapper.section-wrapper-4
-//    .paper
-//      padding-bottom: 120px
-//
-//  .section-wrapper-5
-//    .paper
-//      padding-bottom: 170px
-
 @media screen and (max-width: $mediumBreakpoint)
   .paper
-    min-height: 90%
-    max-height: 95%
     width: 98%
     padding: 20px 15px
 
@@ -509,10 +402,6 @@
   .section-wrapper-0
     .paper
       padding-bottom: 20px
-
-  .section-wrapper.section-wrapper-5
-    .paper
-      padding-bottom: 100px
 
   .section-wrapper-0 .flex-container-desktop
     display: none
@@ -535,22 +424,22 @@
       img
         height: 256px
 
-  .section-wrapper.section-wrapper-1, .section-wrapper.section-wrapper-2
-    padding-bottom: 40px
-
-    .paper
-      padding-bottom: 160px
-
-  .section-wrapper.section-wrapper-3
-    .paper
-      padding-bottom: 140px
+  .section-wrapper-1, .section-wrapper-2
+    .business-cards-placeholder
+      height: 170px
 
   .section-wrapper-3, .section-wrapper-4, .section-wrapper-5
     .paper-inner-container
       justify-content: space-around
 
+    .business-cards-placeholder
+      height: 220px
+
+    .first-image
+      width: 46%
+
     .section-paragraph
-      width: 100%
+      width: 54%
 
   .section-wrapper-0
     p
@@ -639,7 +528,8 @@
   .verification-badge
     img
       width: 75px
-      bottom: 2px
+      bottom: 5px
+      left: 15px
 
 @media screen and (max-width: $smallBreakpoint)
   .business-cards
@@ -647,13 +537,27 @@
 
   .section-wrapper.section-wrapper-4
     .paper
-      padding-bottom: 140px
+      // padding-bottom: 140px
 
   .paper
     width: 95%
 
   .highlighted
     font-size: 17px !important
+
+@media screen and (max-width: $extraSmallBreakpoint)
+  .section-wrapper-3, .section-wrapper-4, .section-wrapper-5
+    .first-image
+      width: 100%
+
+    .business-cards-placeholder
+      height: 160px
+
+    .section-paragraph
+      width: 100%
+
+    .section-paragraph, .section-paragraph-main
+      padding-left: 0
 
 @media screen and (max-width: $smallestBreakpoint)
   .section-wrapper.section-wrapper-2
