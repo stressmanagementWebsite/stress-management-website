@@ -4,11 +4,9 @@ import { Router, Redirect } from "@reach/router";
 import Layout from "../components/layout";
 
 const IndexPage = ({ location, data }) => (
-  <Redirect to="/en">
     <Layout>
       <p>This page is blank</p>
     </Layout>
-  </Redirect>
 );
 
 export default IndexPage;
