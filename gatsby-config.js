@@ -7,6 +7,8 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-postcss`,
+    `gatsby-plugin-gatsby-cloud`,
     `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-datocms`,
